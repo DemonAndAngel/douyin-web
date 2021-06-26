@@ -10,7 +10,14 @@ module.exports = {
     runtimeCompiler: false,
     // webpack配置
     // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
-    chainWebpack: () => {},
+    chainWebpack: config => {
+        config
+            .plugin('html')
+            .tap(args => {
+                args[0].title= '流量掌柜'
+                return args
+            })
+    },
     configureWebpack: () => {},
     // vue-loader 配置项
     // https://vue-loader.vuejs.org/en/options.html
