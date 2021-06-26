@@ -3,7 +3,7 @@
     <dv-full-screen-container>
       <div class="main-header">
         <div class="mh-left"></div>
-        <div class="mh-middle">一个简单的网页</div>
+        <div class="mh-middle">流量掌柜</div>
         <div class="mh-right">
           <dv-border-box-2 class="box" v-if="hasData">
             {{ data.updated_at }}
@@ -22,7 +22,7 @@
             </dv-border-box-3>
             <div class="rmctc-right-container">
               <dv-border-box-3 class="rmctc-chart-1">
-                <UV v-if="hasData" :oldUV="data.uv" />
+                <UV :oldUV="data.uv" />
               </dv-border-box-3>
               <dv-border-box-4 class="rmctc-chart-2" :reverse="true">
                 <Chart v-if="hasData" :data="data" />
