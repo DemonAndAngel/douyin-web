@@ -12,6 +12,7 @@
       </div>
       <dv-border-box-1 class="main-container">
         <dv-border-box-3 class="left-chart-container">
+          <Left v-if="hasData" :data="data" />
         </dv-border-box-3>
         <div class="right-main-container">
           <div class="rmc-top-container">
@@ -43,6 +44,7 @@
 import Center from './Center'
 import UV from './UV'
 import Chart from './Chart'
+import Left from './Left'
 import Qrcode from './Qrcode'
 export default {
   name: 'Index',
@@ -50,7 +52,8 @@ export default {
     UV,
     Center,
     Chart,
-    Qrcode
+    Qrcode,
+    Left,
   },
   data () {
     return {

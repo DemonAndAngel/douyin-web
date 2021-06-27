@@ -12,45 +12,15 @@
     </div>
 
     <div class="cc-main-container">
-      <div class="ccmc-left">
-        <div class="station-info">
-          实时刷单金额<span>{{this.data.sssd}}</span>
-        </div>
+      <dv-active-ring-chart class="ccmc-middle" :config="config" />
+      <div class="ccmc-right">
         <div class="station-info">
           实时uv价值<span>{{this.data.suv}}</span>
         </div>
         <div class="station-info">
-          订单转化率<span>{{this.data.ozhl}}</span>
-        </div>
-        <div class="station-info">
-          成交人数转化率<span>{{this.data.cjrszhl}}</span>
-        </div>
-        <div class="station-info">
-          转粉率<span>{{this.data.zfl}}</span>
+          实时刷单金额<span>{{this.data.sssd}}</span>
         </div>
       </div>
-
-
-      <dv-active-ring-chart class="ccmc-middle" :config="config" />
-
-      <div class="ccmc-right">
-        <div class="station-info">
-          <span>{{this.data.kdj}}</span>客单价
-        </div>
-        <div class="station-info">
-          <span>{{this.data.pay_ucnt}}</span>成交人数
-        </div>
-        <div class="station-info">
-          <span>{{this.data.rjkbsc}}</span>人均看播时长
-        </div>
-        <div class="station-info">
-          <span>{{this.data.cjfszb}}</span>成交粉丝占比
-        </div>
-        <div class="station-info">
-          <span>{{this.data.online_user_ucnt}}</span>累计观看人数
-        </div>
-      </div>
-
     </div>
   </div>
 </template>
@@ -66,17 +36,18 @@ export default {
       config: {
         data: [
           {
-            name: '成交件数',
-            value: Number(this.data.pay_cnt),
+            name: '累积观看人数',
+            value: Number(this.data.online_user_ucnt),
+            // value: Number(this.data.pay_cnt),
           },
         ],
         color: ['#00e9ff'],
         lineWidth: 30,
-        radius: '60%',
-        activeRadius: '60%',
+        radius: '70%',
+        activeRadius: '70%',
         showOriginValue: true,
         digitalFlopStyle: {
-          fontSize: 25,
+          fontSize: 30,
           fill: '#fff'
         }
       },
@@ -126,23 +97,25 @@ export default {
       width: 50%;
       height: 90%;
       .active-ring-name {
-        font-size: 20px !important;
+        font-size: 24px !important;
+        width: 100%;
       }
     }
     .ccmc-left, .ccmc-right {
-      width: 25%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font-size: 15px;
+      font-size: 30px;
       span {
-        font-size: 25px;
+        font-size: 40px;
         font-weight: bold;
       }
       .station-info {
         height: 80px;
         display: flex;
         align-items: center;
+        width: 100%;
       }
     }
     .ccmc-left {
@@ -154,7 +127,7 @@ export default {
     .ccmc-right {
       align-items: flex-start;
       span {
-        margin-right: 10px;
+        margin-left: 30px;
       }
     }
   }

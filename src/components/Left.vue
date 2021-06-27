@@ -1,17 +1,29 @@
 <template>
-  <div class="right-chart-2">
+  <div class="left-chart">
     <div class="ccmc-left">
       <div class="station-info">
-        新增粉丝数<span>{{this.data.incr_fans_cnt}}</span>
+        订单转化率<span>{{this.data.ozhl}}</span>
       </div>
       <div class="station-info">
-        转粉率<span>{{this.data.zfl}}</span>
+        成交人数转化率<span>{{this.data.cjrszhl}}</span>
       </div>
       <div class="station-info">
-        成交粉丝占比<span>{{this.data.cjfszb}}</span>
+        成交件数<span>{{this.data.pay_cnt}}</span>
       </div>
       <div class="station-info">
-        人均看播时长<span>{{this.data.rjkbsc}}</span>
+        成交人数 <span>{{this.data.pay_ucnt}}</span>
+      </div>
+      <div class="station-info">
+        客单价<span>{{this.data.kdj}}</span>
+      </div>
+      <div class="station-info">
+        商品曝光人数<span>{{this.data.exposure}}</span>
+      </div>
+      <div class="station-info">
+        商品点击人数<span>{{this.data.click}}</span>
+      </div>
+      <div class="station-info">
+        购物车点击率<span>{{this.data.gwcdjl}}</span>
       </div>
     </div>
   </div>
@@ -19,7 +31,7 @@
 
 <script>
 export default {
-  name: 'Chart',
+  name: 'Left',
   props: ["data"],
   data () {
     return {
@@ -29,7 +41,7 @@ export default {
 </script>
 
 <style lang="less">
-.right-chart-2 {
+.left-chart {
   width: 100%;
   height: 100%;
   display: flex;
@@ -47,6 +59,8 @@ export default {
       margin-left: 10px;
     }
     .station-info {
+      margin-left: 20px;
+      width: 100%;
       height: 80px;
       display: flex;
       align-items: center;
