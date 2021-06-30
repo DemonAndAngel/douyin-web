@@ -23,15 +23,15 @@
             </dv-border-box-3>
             <div class="rmctc-right-container">
               <dv-border-box-3 class="rmctc-chart-1">
-                <UV :oldUV="data.uv" />
+                <UV :data="data" />
               </dv-border-box-3>
               <dv-border-box-4 class="rmctc-chart-2" :reverse="true">
                 <Chart v-if="hasData" :data="data" />
               </dv-border-box-4>
             </div>
           </div>
-
           <dv-border-box-4 class="rmc-bottom-container">
+            <Footer v-if="hasData" :data="data" />
           </dv-border-box-4>
         </div>
       </dv-border-box-1>
@@ -46,6 +46,7 @@ import UV from './UV'
 import Chart from './Chart'
 import Left from './Left'
 import Qrcode from './Qrcode'
+import Footer from './Footer'
 export default {
   name: 'Index',
   components: {
@@ -54,6 +55,7 @@ export default {
     Chart,
     Qrcode,
     Left,
+    Footer,
   },
   data () {
     return {
@@ -62,28 +64,7 @@ export default {
       qrcodeLatest: false,
       src: "",
       hasData: false,
-      data: {
-        updated_at: "",
-        pay_cnt: "",
-        pay_ucnt: "",
-        incr_fans_cnt: "",
-        online_user_ucnt: "",
-        gmv: 0,
-        exposure: "",
-        click: "",
-        yin_liu: "",
-        f_yin_liu: "",
-        sssd: "",
-        uv: "",
-        suv: "",
-        ozhl: "",
-        cjrszhl: "",
-        zfl: "",
-        gwcdjl: "",
-        kdj: "",
-        cjfszb: "",
-        rjkbsc: ""
-      }
+      data: {}
     }
   },
   mounted() {
@@ -101,6 +82,39 @@ export default {
             this.loading = false
             this.hasData = true
             this.data = res.data
+            this.data = {
+              cjfszb: this.data.cjfszb ?this.data.cjfszb:"",
+              cjrszhl: this.data.cjrszhl ?this.data.cjrszhl:"",
+              click: this.data.click ?this.data.click:"",
+              exposure: this.data.exposure ?this.data.exposure:"",
+              f_yin_liu: this.data.f_yin_liu ?this.data.f_yin_liu:"",
+              gmv: this.data.gmv ?this.data.gmv:"",
+              gwcdjl: this.data.gwcdjl ?this.data.gwcdjl:"",
+              incr_fans_cnt: this.data.incr_fans_cnt ?this.data.incr_fans_cnt:"",
+              jrzbjrs: this.data.jrzbjrs ?this.data.jrzbjrs:"",
+              kdj: this.data.kdj ?this.data.kdj:"",
+              online_user_ucnt: this.data.online_user_ucnt ?this.data.online_user_ucnt:"",
+              ozhl: this.data.ozhl ?this.data.ozhl:"",
+              pay_cnt: this.data.pay_cnt ?this.data.pay_cnt:"",
+              pay_ucnt: this.data.pay_ucnt ?this.data.pay_ucnt:"",
+              rjkbsc: this.data.rjkbsc ?this.data.rjkbsc:"",
+              sssd: this.data.sssd ?this.data.sssd:"",
+              sszxrs: this.data.sszxrs ?this.data.sszxrs:"",
+              suv: this.data.suv ?this.data.suv:"",
+              title: this.data.title ?this.data.title:"",
+              updated_at: this.data.updated_at ?this.data.updated_at:"",
+              uv: this.data.uv ?this.data.uv:"",
+              yin_liu: this.data.yin_liu ?this.data.yin_liu:"",
+              zbhmzhl: this.data.zbhmzhl ?this.data.zbhmzhl:"",
+              zbjbgrs: this.data.zbjbgrs ?this.data.zbjbgrs:"",
+              zfl: this.data.zfl ?this.data.zfl:"",
+              lkzbjrs: this.data.lkzbjrs? this.data.lkzbjrs:"",
+              ddzhlb: this.data.ddzhlb? this.data.ddzhlb : false,
+              zflb: this.data.zflb? this.data.zflb : false,
+              gwcdjlb: this.data.gwcdjlb? this.data.gwcdjlb : false,
+              zbhmzhlb: this.data.zbhmzhlb? this.data.zbhmzhlb : false,
+            }
+            this.data = {...this.data}
           }else{
             this.hasData = false
             this.loading = true
@@ -209,10 +223,10 @@ export default {
     height: 35%;
   }
   .rmctc-chart-2 {
-    height: 70%;
+    height: 40%;
   }
   .rmctc-chart-1{
-    height: 30%;
+    height: 60%;
   }
 }
 </style>

@@ -15,7 +15,7 @@
       <dv-active-ring-chart class="ccmc-middle" :config="config" />
       <div class="ccmc-right">
         <div class="station-info">
-          实时uv价值<span>{{this.data.suv}}</span>
+          累积观看人数<span>{{this.data.online_user_ucnt}}</span>
         </div>
         <div class="station-info">
           实时刷单金额<span>{{this.data.sssd}}</span>
@@ -31,14 +31,19 @@ export default {
   components: {
   },
   props: [ "data" ],
+  watch: {
+    data(val, oldVal) {//普通的watch监听
+      this.config.data[0].value = Number(val.suv)
+      this.config = {...this.config}
+    }
+  },
   data () {
     return {
       config: {
         data: [
           {
-            name: '累积观看人数',
-            value: Number(this.data.online_user_ucnt),
-            // value: Number(this.data.pay_cnt),
+            name: '实时uv价值',
+            value: Number(this.data.suv),
           },
         ],
         color: ['#00e9ff'],
@@ -49,7 +54,8 @@ export default {
         digitalFlopStyle: {
           fontSize: 30,
           fill: '#fff'
-        }
+        },
+        digitalFlopToFixed: 2,
       },
     }
   }
