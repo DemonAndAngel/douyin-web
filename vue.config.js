@@ -1,3 +1,7 @@
+const path = require('path')
+function resolve (dir) {
+    return path.join(__dirname, './', dir)
+}
 module.exports = {
     // 基本路径
     publicPath: '/',
@@ -11,12 +15,27 @@ module.exports = {
     // webpack配置
     // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
     chainWebpack: config => {
-        config
-            .plugin('html')
+        config.plugin('html')
             .tap(args => {
                 args[0].title= '流量掌柜'
                 return args
             })
+        config.module
+            .rule('svg')
+            .exclude.add(resolve('src/components/imgs/icons'))
+            .end()
+        config.module
+            .rule('icons')
+            .test(/\.svg$/)
+            .include.add(resolve('src/components/imgs/icons'))
+            .end()
+            .use('svg-sprite-loader')
+            .loader('svg-sprite-loader')
+            .options({
+                symbolId: 'icon-[name]'
+            })
+            .end()
+
     },
     configureWebpack: () => {},
     // vue-loader 配置项

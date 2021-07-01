@@ -1,0 +1,7 @@
+import Vue from 'vue'
+import SvgIcon from '@/components/SvgIcon'
+Vue.component('SvgIcon', SvgIcon)
+const req = require.context('.', false, /\.svg$/)
+const requireAll = requireContext => requireContext.keys().map(requireContext)
+requireAll(req)
+export default SvgIcon

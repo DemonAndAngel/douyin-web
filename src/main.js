@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Icon from './components/imgs/icons'
 
 import './assets/common.less'
 
@@ -24,5 +25,6 @@ Vue.config.productionTip = false
 Vue.use(dataV)
 
 new Vue({
+  Icon,
   render: h => h(App)
 }).$mount('#app')

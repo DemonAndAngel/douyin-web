@@ -1,5 +1,6 @@
 <template>
   <div id="data-view">
+    <Toast :data="data" />
     <dv-full-screen-container>
       <div class="main-header">
         <div class="mh-left"></div>
@@ -47,9 +48,11 @@ import Chart from './Chart'
 import Left from './Left'
 import Qrcode from './Qrcode'
 import Footer from './Footer'
+import Toast from "./Toast";
 export default {
   name: 'Index',
   components: {
+    Toast,
     UV,
     Center,
     Chart,
