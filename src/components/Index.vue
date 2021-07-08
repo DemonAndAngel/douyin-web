@@ -1,5 +1,6 @@
 <template>
   <div id="data-view">
+    <Video v-if="hasData && data.stream_url" :data="data" />
     <Toast :data="data" />
     <dv-full-screen-container>
       <div class="main-header">
@@ -49,6 +50,7 @@ import Left from './Left'
 import Qrcode from './Qrcode'
 import Footer from './Footer'
 import Toast from "./Toast";
+import Video from "./Video";
 export default {
   name: 'Index',
   components: {
@@ -59,6 +61,7 @@ export default {
     Qrcode,
     Left,
     Footer,
+    Video,
   },
   data () {
     return {
