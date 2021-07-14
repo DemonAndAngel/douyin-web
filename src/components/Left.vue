@@ -25,6 +25,12 @@
       <div class="station-info">
         <span :class="this.data.gwcdjlb ? 'spangwc': ''">购物车点击率</span><span class="span2">{{this.data.gwcdjl}}</span>
       </div>
+      <div class="station-info">
+        直播评论次数<span class="span2">{{this.data.zbjpls}}</span>
+      </div>
+      <div class="station-info">
+        直播评论次数增长率<span class="span2">{{this.data.zbplcszzl}}</span>
+      </div>
     </div>
   </div>
 </template>
