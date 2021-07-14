@@ -70,7 +70,16 @@ export default {
       qrcodeLatest: false,
       src: "",
       hasData: false,
-      data: {}
+      data: {
+        // online_user_ucnt: "111111",
+        // sssd: "1111111",
+        // incr_fans_cnt: "123123123",
+        // zfl: "100.00%",
+        // cjfszb: "100.00%",
+        // rjkbsc: "1000000",
+        // zbhmzhl: "100.00%",
+        // zbjbgrs: "1000000",
+      }
     }
   },
   mounted() {

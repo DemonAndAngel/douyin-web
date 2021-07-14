@@ -47,7 +47,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 20px;
+    font-size: 14px;
     align-items: flex-start;
     .span2 {
       font-size: 30px;

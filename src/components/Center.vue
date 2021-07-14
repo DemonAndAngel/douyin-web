@@ -133,7 +133,12 @@ export default {
     .ccmc-right {
       align-items: flex-start;
       span {
-        margin-left: 30px;
+        margin-left: 0;
+      }
+      .station-info {
+        margin-top: 20px;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }
