@@ -1,6 +1,6 @@
 <template>
   <div id="data-view">
-    <Video v-if="hasData && data.stream_url" :data="data" />
+    <Suspend v-if="hasData && data.stream_url" :data="data" />
     <Toast :data="data" />
     <dv-full-screen-container>
       <div class="main-header">
@@ -51,6 +51,7 @@ import Qrcode from './Qrcode'
 import Footer from './Footer'
 import Toast from "./Toast";
 import Video from "./Video";
+import Suspend from "./Suspend";
 export default {
   name: 'Index',
   components: {
@@ -62,6 +63,7 @@ export default {
     Left,
     Footer,
     Video,
+    Suspend,
   },
   data () {
     return {
@@ -71,6 +73,7 @@ export default {
       src: "",
       hasData: false,
       data: {
+        // stream_url: "123",
         // online_user_ucnt: "111111",
         // sssd: "1111111",
         // incr_fans_cnt: "123123123",

@@ -38,8 +38,6 @@ export default {
 
 <style lang="less">
 .div-video {
-    position: absolute;
-    z-index: 1000;
     .video{
         width: 180px;
         height: 320px;
