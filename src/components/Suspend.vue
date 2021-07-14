@@ -1,8 +1,10 @@
 <template>
   <div class="suspend" style="">
     <div class="suspend-box" v-drag draggable="false">
-        <div class="close" @click="closeVideo">
-          <SvgIcon iconClass="close"/>
+        <div class="close">
+          <span class="icon" @click="closeVideo">
+            <SvgIcon iconClass="close"/>
+          </span>
         </div>
         <div class="video" v-if="isShow">
             <Video :data="data" />
@@ -25,7 +27,7 @@ export default {
   },
   methods: {
       closeVideo() {
-          this.isShow = !this.isShow
+        this.isShow = !this.isShow
       }
   },
   directives: {
@@ -69,7 +71,6 @@ export default {
         left: 100px;
         top: 100px;
         .close {
-            width: 100%;
             text-align: right;
             fill: #ffffff;
         }

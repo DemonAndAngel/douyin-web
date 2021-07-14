@@ -100,38 +100,6 @@ export default {
             this.loading = false
             this.hasData = true
             this.data = res.data
-            this.data = {
-              cjfszb: this.data.cjfszb ?this.data.cjfszb:"",
-              cjrszhl: this.data.cjrszhl ?this.data.cjrszhl:"",
-              click: this.data.click ?this.data.click:"",
-              exposure: this.data.exposure ?this.data.exposure:"",
-              f_yin_liu: this.data.f_yin_liu ?this.data.f_yin_liu:"",
-              gmv: this.data.gmv ?this.data.gmv:"",
-              gwcdjl: this.data.gwcdjl ?this.data.gwcdjl:"",
-              incr_fans_cnt: this.data.incr_fans_cnt ?this.data.incr_fans_cnt:"",
-              jrzbjrs: this.data.jrzbjrs ?this.data.jrzbjrs:"",
-              kdj: this.data.kdj ?this.data.kdj:"",
-              online_user_ucnt: this.data.online_user_ucnt ?this.data.online_user_ucnt:"",
-              ozhl: this.data.ozhl ?this.data.ozhl:"",
-              pay_cnt: this.data.pay_cnt ?this.data.pay_cnt:"",
-              pay_ucnt: this.data.pay_ucnt ?this.data.pay_ucnt:"",
-              rjkbsc: this.data.rjkbsc ?this.data.rjkbsc:"",
-              sssd: this.data.sssd ?this.data.sssd:"",
-              sszxrs: this.data.sszxrs ?this.data.sszxrs:"",
-              suv: this.data.suv ?this.data.suv:"",
-              title: this.data.title ?this.data.title:"",
-              updated_at: this.data.updated_at ?this.data.updated_at:"",
-              uv: this.data.uv ?this.data.uv:"",
-              yin_liu: this.data.yin_liu ?this.data.yin_liu:"",
-              zbhmzhl: this.data.zbhmzhl ?this.data.zbhmzhl:"",
-              zbjbgrs: this.data.zbjbgrs ?this.data.zbjbgrs:"",
-              zfl: this.data.zfl ?this.data.zfl:"",
-              lkzbjrs: this.data.lkzbjrs? this.data.lkzbjrs:"",
-              ddzhlb: this.data.ddzhlb? this.data.ddzhlb : false,
-              zflb: this.data.zflb? this.data.zflb : false,
-              gwcdjlb: this.data.gwcdjlb? this.data.gwcdjlb : false,
-              zbhmzhlb: this.data.zbhmzhlb? this.data.zbhmzhlb : false,
-            }
             this.data = {...this.data}
           }else{
             this.hasData = false
